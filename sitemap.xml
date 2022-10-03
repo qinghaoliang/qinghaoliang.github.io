@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>github.com/qinghaoliang/qinghaoliang.github.io.git/projects/about/</loc>
+    <loc>//qinghaoliang.github.io.git/projects/about/</loc>
   </url><url>
-    <loc>github.com/qinghaoliang/qinghaoliang.github.io.git/categories/</loc>
+    <loc>//qinghaoliang.github.io.git/categories/</loc>
   </url><url>
-    <loc>github.com/qinghaoliang/qinghaoliang.github.io.git/projects/</loc>
+    <loc>//qinghaoliang.github.io.git/projects/</loc>
   </url><url>
-    <loc>github.com/qinghaoliang/qinghaoliang.github.io.git/</loc>
+    <loc>//qinghaoliang.github.io.git/</loc>
   </url><url>
-    <loc>github.com/qinghaoliang/qinghaoliang.github.io.git/tags/</loc>
+    <loc>//qinghaoliang.github.io.git/tags/</loc>
   </url>
 </urlset>
