@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Resolving Atlas Divergence in Connectomes: A Lightweight Domain Adaptation Approach Using Optimal Transport - Qinghao Liang</title>
+  <meta name="description" content="Our manuscript is published at International Workshop on Graphs in Biomedical Image Analysis, MICCAI 2022 https://link.springer.com/chapter/10.1007/978-3-031-21083-9_12
+In neuroimaging research, sharing open datasets boosts transparency, reproducibility, and cross-disciplinary work, advancing our understanding of brain functions. Yet, the diversity in brain atlas standards complicates data sharing and connectome comparability. Innovative domain adaptation techniques, like entropic Gromov-Wasserstein distance and optimal transport with matrix factorization, help overcome these challenges by enabling the mapping of connectomes across different atlas spaces.">
+  <meta name="author" content="Qinghao Liang"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Qinghao Liang",
+    
+    "url": "\/\/qinghaoliang.github.io\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/\/qinghaoliang.github.io\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/\/qinghaoliang.github.io\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/\/qinghaoliang.github.io\/projects\/connectome_transformation\/",
+          "name": "Resolving atlas divergence in connectomes a lightweight domain adaptation approach using optimal transport"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Qinghao Liang"
+  },
+  "headline": "Resolving Atlas Divergence in Connectomes: A Lightweight Domain Adaptation Approach Using Optimal Transport",
+  "description" : "Our manuscript is published at International Workshop on Graphs in Biomedical Image Analysis, MICCAI 2022 https:\/\/link.springer.com\/chapter\/10.1007\/978-3-031-21083-9_12\nIn neuroimaging research, sharing open datasets boosts transparency, reproducibility, and cross-disciplinary work, advancing our understanding of brain functions. Yet, the diversity in brain atlas standards complicates data sharing and connectome comparability. Innovative domain adaptation techniques, like entropic Gromov-Wasserstein distance and optimal transport with matrix factorization, help overcome these challenges by enabling the mapping of connectomes across different atlas spaces.",
+  "inLanguage" : "en",
+  "wordCount":  720 ,
+  "datePublished" : "2024-02-05T15:35:51",
+  "dateModified" : "2024-02-05T15:35:51",
+  "image" : "\/\/qinghaoliang.github.io\/img\/profile.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "\/\/qinghaoliang.github.io\/projects\/connectome_transformation\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/\/qinghaoliang.github.io\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/\/qinghaoliang.github.io\/img\/profile.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Resolving Atlas Divergence in Connectomes: A Lightweight Domain Adaptation Approach Using Optimal Transport" />
+<meta property="og:description" content="Our manuscript is published at International Workshop on Graphs in Biomedical Image Analysis, MICCAI 2022 https://link.springer.com/chapter/10.1007/978-3-031-21083-9_12
+In neuroimaging research, sharing open datasets boosts transparency, reproducibility, and cross-disciplinary work, advancing our understanding of brain functions. Yet, the diversity in brain atlas standards complicates data sharing and connectome comparability. Innovative domain adaptation techniques, like entropic Gromov-Wasserstein distance and optimal transport with matrix factorization, help overcome these challenges by enabling the mapping of connectomes across different atlas spaces.">
+<meta property="og:image" content="//qinghaoliang.github.io/img/profile.png" />
+<meta property="og:url" content="//qinghaoliang.github.io/projects/connectome_transformation/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Qinghao Liang" />
+
+  <meta name="twitter:title" content="Resolving Atlas Divergence in Connectomes: A Lightweight Domain …" />
+  <meta name="twitter:description" content="Our manuscript is published at International Workshop on Graphs in Biomedical Image Analysis, MICCAI 2022 https://link.springer.com/chapter/10.1007/978-3-031-21083-9_12
+In neuroimaging research, …">
+  <meta name="twitter:image" content="//qinghaoliang.github.io/img/profile.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@liang_qinghao" />
+  <meta name="twitter:creator" content="@liang_qinghao" />
+  <link href='//qinghaoliang.github.io/img/brain.png' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.104.1" />
+  <link rel="alternate" href="//qinghaoliang.github.io/index.xml" type="application/rss+xml" title="Qinghao Liang"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="//qinghaoliang.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="//qinghaoliang.github.io/css/highlight.min.css" /><link rel="stylesheet" href="//qinghaoliang.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//qinghaoliang.github.io/">Qinghao Liang</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Resume" href="/resume/Qinghao_resume.pdf">Resume</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Publications" href="https://scholar.google.com/citations?user=jwf6KUEAAAAJ&amp;hl=en">Publications</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Projects</a>
+              <div class="navlinks-children">
+                
+                  <a href="/projects/connectome_transformation">Resolving Atlas Divergence in Connectomes</a>
+                
+                  <a href="/projects/missing_data">Rescuing missing data</a>
+                
+                  <a href="/projects/learning_across_atlases">Learning across atlases</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Qinghao Liang" href="//qinghaoliang.github.io/">
+            <img class="avatar-img" src="//qinghaoliang.github.io/img/profile.png" alt="Qinghao Liang" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="projects-heading">
+              
+                <h1>Resolving Atlas Divergence in Connectomes: A Lightweight Domain Adaptation Approach Using Optimal Transport</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Our manuscript is published at International Workshop on Graphs in Biomedical Image Analysis, MICCAI 2022 <a href="https://link.springer.com/chapter/10.1007/978-3-031-21083-9_12">https://link.springer.com/chapter/10.1007/978-3-031-21083-9_12</a></p>
+<p>In neuroimaging research, sharing open datasets boosts transparency, reproducibility, and cross-disciplinary work, advancing our understanding of brain functions. Yet, the diversity in brain atlas standards complicates data sharing and connectome comparability. Innovative domain adaptation techniques, like entropic Gromov-Wasserstein distance and optimal transport with matrix factorization, help overcome these challenges by enabling the mapping of connectomes across different atlas spaces. This improves machine learning&rsquo;s predictive accuracy using varied datasets and is essential for maximizing the potential of open neuroimaging datasets in clinical and cognitive studies, despite data management and regulatory challenges.</p>
+<h2 id="brain-atlas-in-neuorimaging-analysis">Brain atlas in neuorimaging analysis</h2>
+<p><img src="/img/atlas.gif" alt="atlas">
+Brain parcellation facilitates both theoretical understanding and practical applications in neuroscience research by simplifying complex brain data into comprehensible and analyzable formats. Despite their utility, the field of clinical and cognitive neuroimaging research lacks a universally accepted standard atlas, with each parcellation method uniquely emphasizing certain brain features, suggesting that a universally applicable standard may not be feasible. This makes connectomes from different atlases essentially incomparable. Such heterogeneity complicates the sharing of connectomes and affects the comparability of machine learning models trained on them.</p>
+<h2 id="method">Method</h2>
+<p><img src="/img/flowchart.png" alt="workflow">
+Flowchart of our method. a, Learning mapping between atlases with optimal transport. Node-wise timeseries data yields transportation matrices at each timepoint, with the average providing the final mapping. When only connectomes are available, node mapping is learned through graph matching. b, Decomposing the source atlas connectome into node factors, transported to the target space using the mapping learned in a for estimating target connectomes.</p>
+<h3 id="optimal-transport-of-node-timeseries">Optimal transport of node timeseries</h3>
+<p>Given the corresponding node information \(\textbf{U} = [u_1^T, &hellip;, u_d^T] \in \mathbb{R}^{n_s\times d} \) of parcellation \( \alpha \)
+and \(\textbf{V} = [v_1^T, &hellip;, v_d^T] \in \mathbb{R}^{n_t\times d}\) of parcellation as \(\beta\), the optimal transport \(\textbf{T}\) is learned by solving the following equation:
+$$
+\min_T \sum_i C(v_i,\textbf{T}(u_i)):\textbf{T}_{\sharp \textbf{U}} = \textbf{V}
+$$</p>
+<h3 id="graph-matching-using-gromov-wasserstein-discrepancy">Graph-matching using gromov-wasserstein discrepancy</h3>
+<p>Gromov-Wasserstein Discrepancy compares graphs in a relational way, measuring how the edges in a graph compare to those in the other graph. It is a natural extension of the Gromov-Wasserstein distance defined for metric-measure spaces.
+In graph matching, a metric-measure space corresponds to the pair \((\textbf{D},\textbf{u})\) of a graph \(G(\mathcal{V},\mathcal{E})\), where \(\textbf{D} = [d_{ij}] \in  \mathbb{R}^{n\times n} \)  represents a distance matrix derived from edge set \(\mathcal{E}\), \(\textbf{u} \in \Sigma^{n} \) is a Borel probability measure defined on node set \(\mathcal{V}\). In our case, the distance matrix is calculated using \(d_{ij} = 1/(1+c_{ij})\) from structural connectome \(\textbf{C}\) and \(\textbf{u}\) is calculated based on the normalized degree of graph. Given two graphs \(G(\mathcal{V}_s,\mathcal{E}_s)\) and \(G(\mathcal{V}_t,\mathcal{E}_t)\), the Gromov-Wasserstein discrepancy between \((\textbf{D}_s,\textbf{u}_s)\) and \((\textbf{D}_t,\textbf{u}_t)\) is defined as</p>
+<p>$$
+d_{GW} := \min_{\textbf{T}} \sum_{i,j,i&rsquo;,j&rsquo;} L(d^s_{ij},d^t_{i&rsquo;j&rsquo;})T_{ii&rsquo;}T_{jj&rsquo;}
+$$</p>
+<h3 id="dataset">Dataset</h3>
+<p>This study used data from three datasets: the UK Biobank, the Human Connectome Project (HCP), the Human Connectome Project in Development (HCPD), the Yale Low-Resolution Controls Dataset (Yale).</p>
+<h2 id="results">Results</h2>
+<h3 id="transformed-connectomes-are-similar-to-target-connectomes">Transformed connectomes are similar to target connectomes</h3>
+<p><img src="/img/mapping.png" alt="mapping">
+Our analysis demonstrates the successful estimation of functional connectomes r = 0.533 and structural connectomes r = 0.502 using functional mapping. Notably, the accuracy of structural mapping appears to be relatively lower, particularly when working with connectomes transformed from or to the Dosenbach atlas. This discrepancy can be attributed to the origins of the Dosenbach atlas, which was constructed primarily based on the analysis of task activations and exhibits a lesser degree of similarity to other atlases. In contrast, we observed significantly higher correlations when transforming data from the Shen atlas to the Craddock atlas (r = 0.744 for functional connectomes and r = 0.692 for structural connectomes). Both the Shen and Craddock atlases rely on the clustering of time series data using variations of the N-cut algorithm. These observed correlations serve as an indicator of the degree of similarity or overlap between the atlases.</p>
+<h3 id="models-trained-on-the-transformed-connectomes-retained-essential-predictive-information">Models trained on the transformed connectomes retained essential predictive information</h3>
+<p><img src="/img/prediction.png" alt="prediction">
+Regression models using transformed connectomes predicted phenotypic measures for the target connectome. Although slightly less accurate than ground truth models trained directly on target connectomes, they maintained high accuracy, especially when the Dosenbach atlas was excluded. These predictive model results aligned with estimation accuracy findings, highlighting the superiority of functional mapping over structural mapping. However, in cases where only paired structural connectomes of two atlases are accessible, structural mapping can serve as a substitute for functional mapping.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=%2f%2fqinghaoliang.github.io%2fprojects%2fconnectome_transformation%2f&amp;text=Resolving%20Atlas%20Divergence%20in%20Connectomes%3a%20A%20Lightweight%20Domain%20Adaptation%20Approach%20Using%20Optimal%20Transport&amp;via=liang_qinghao" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+  
+      
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=%2f%2fqinghaoliang.github.io%2fprojects%2fconnectome_transformation%2f&amp;title=Resolving%20Atlas%20Divergence%20in%20Connectomes%3a%20A%20Lightweight%20Domain%20Adaptation%20Approach%20Using%20Optimal%20Transport" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+
+      
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+            <li class="next">
+              <a href="//qinghaoliang.github.io/projects/missing_data/" data-toggle="tooltip" data-placement="top" title="Rescuing missing data with imputation in connectome-based predictive modeling">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:qinghao.liang@yale.edu" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/qinghaoliang" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/liang_qinghao" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/qinghao" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Qinghao Liang
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="//qinghaoliang.github.io/">Qinghao Liang</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//qinghaoliang.github.io/js/main.js"></script>
+<script src="//qinghaoliang.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="//qinghaoliang.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
