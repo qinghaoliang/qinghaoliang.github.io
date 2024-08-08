@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Learning across atlases - Qinghao Liang</title>
+  <title>Learning brain phenotype relationship across atlases - Qinghao Liang</title>
+  <meta name="description" content="Data heterogeneity, notably due to variations in brain atlases, poses a significant challenge in federated learning (FL) and meta-learning within neuroimaging, especially in functional MRI (fMRI) studies of neurological diseases. The diversity of brain atlases leads to inconsistencies in data representation, complicating the aggregation of insights across different datasets in a federated learning framework. This heterogeneity affects the collaborative training of models, as it introduces variability in data distributions and model architectures across institutions.">
   <meta name="author" content="Qinghao Liang"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,7 +45,7 @@
         "position": 3,
         "item": {
           "@id": "\/\/qinghaoliang.github.io\/projects\/learning_across_atlases\/",
-          "name": "Learning across atlases"
+          "name": "Learning brain phenotype relationship across atlases"
         }
     }]
 }
@@ -55,10 +56,10 @@
   "author": {
     "name" : "Qinghao Liang"
   },
-  "headline": "Learning across atlases",
-  "description" : "",
+  "headline": "Learning brain phenotype relationship across atlases",
+  "description" : "Data heterogeneity, notably due to variations in brain atlases, poses a significant challenge in federated learning (FL) and meta-learning within neuroimaging, especially in functional MRI (fMRI) studies of neurological diseases. The diversity of brain atlases leads to inconsistencies in data representation, complicating the aggregation of insights across different datasets in a federated learning framework. This heterogeneity affects the collaborative training of models, as it introduces variability in data distributions and model architectures across institutions.",
   "inLanguage" : "en",
-  "wordCount":  0 ,
+  "wordCount":  847 ,
   "datePublished" : "2024-02-10T22:10:16",
   "dateModified" : "2024-02-10T22:10:16",
   "image" : "\/\/qinghaoliang.github.io\/img\/profile.png",
@@ -77,13 +78,15 @@
 }
 </script>
 
-<meta property="og:title" content="Learning across atlases" />
+<meta property="og:title" content="Learning brain phenotype relationship across atlases" />
+<meta property="og:description" content="Data heterogeneity, notably due to variations in brain atlases, poses a significant challenge in federated learning (FL) and meta-learning within neuroimaging, especially in functional MRI (fMRI) studies of neurological diseases. The diversity of brain atlases leads to inconsistencies in data representation, complicating the aggregation of insights across different datasets in a federated learning framework. This heterogeneity affects the collaborative training of models, as it introduces variability in data distributions and model architectures across institutions.">
 <meta property="og:image" content="//qinghaoliang.github.io/img/profile.png" />
 <meta property="og:url" content="//qinghaoliang.github.io/projects/learning_across_atlases/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Qinghao Liang" />
 
-  <meta name="twitter:title" content="Learning across atlases" />
+  <meta name="twitter:title" content="Learning brain phenotype relationship across atlases" />
+  <meta name="twitter:description" content="Data heterogeneity, notably due to variations in brain atlases, poses a significant challenge in federated learning (FL) and meta-learning within neuroimaging, especially in functional MRI (fMRI) …">
   <meta name="twitter:image" content="//qinghaoliang.github.io/img/profile.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@liang_qinghao" />
@@ -232,7 +235,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="projects-heading">
               
-                <h1>Learning across atlases</h1>
+                <h1>Learning brain phenotype relationship across atlases</h1>
               
               
                 <hr class="small">
@@ -253,7 +256,27 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
+        <p>Data heterogeneity, notably due to variations in brain atlases, poses a significant challenge in federated learning (FL) and meta-learning within neuroimaging, especially in functional MRI (fMRI) studies of neurological diseases. The diversity of brain atlases leads to inconsistencies in data representation, complicating the aggregation of insights across different datasets in a federated learning framework. This heterogeneity affects the collaborative training of models, as it introduces variability in data distributions and model architectures across institutions. Similarly, in meta-learning, the goal of quickly adapting models to new tasks is hindered by the disparate data spaces generated by the use of various atlases, requiring more sophisticated approaches to achieve effective generalization. Addressing the challenges posed by atlas heterogeneity is crucial for the successful application of FL and meta-learning in neuroimaging, aiming to enhance precision medicine and the accuracy of fMRI analysis.</p>
+<h2 id="method">Method</h2>
+<h3 id="overcoming-atlas-space-heterogeneity-in-federated-learning-for-multi-site-connectome-modeling">Overcoming atlas space heterogeneity in federated learning for multi-site connectome modeling</h3>
+<p><img src="/img/Fed.png" alt="fed">
+<strong>Figure 1. Federated learning framework for sites with connectomes from different atlases. Initially, connectomes are locally transformed into the target atlas using online mapping resources. The local models, trained on the transformed data, are subsequently aggregated on the server and distributed back to the local nodes for updates.</strong></p>
+<h3 id="meta-learning-across-heterogeneous-atlases-space">Meta Learning across heterogeneous atlases space</h3>
+<p><img src="/img/meta.png" alt="meta">
+<strong>Figure 2. Meta learning framework for connectomes across atlases</strong></p>
+<p>Meta-learning, fundamentally regarded as &ldquo;learning to learn,&rdquo; is an advanced concept in machine learning that centers around crafting a meta-algorithm, denoted as \(\mathcal{M}\), which enhances its learning efficiency by harnessing experience from a diversity of tasks. In the meta-training stage, \(\mathcal{M}\) is trained on a set \( \cal T_{train} \), with each task \(T_i \in \cal T_{train}\) having its dataset \(D_i\). This stage aims to optimize \(\mathcal{M}\) such that it acquires a generalized learning strategy, capable of rapid adaptation to new tasks. This involves a dual-layered learning process: a task-specific learning for each \(T_i\) , where a model \(f_{\theta_i}\) is learned using \(D_i\), and a meta-level learning where the parameters of \(\mathcal{M}\) are adjusted based on the performance across these varied tasks. The objective is to enable \(\mathcal{M}\) to provide effective initial settings or learning approaches for unfamiliar tasks.</p>
+<p>Following this, the meta-testing phase evaluates \(\mathcal{M}\) using a different set of tasks, \(\cal T_{test}\), with each \(T_{new} \in \cal T_{test}\) presenting a novel dataset \(D_{new}\). The meta-algorithm is then adapted to each \(T_{new}\) using a small portion of \(D_{new}\), emphasizing rapid and efficient adaptation. The success of \(\mathcal{M}\) in meta-testing is gauged by its quick learning capability, minimal data requirement for adaptation, and high generalization performance on unseen data from \(D_{new}\).</p>
+<p>In our setting, the data in the meta-train set and meta-test set is in different atlas space. We first transformed the data in the meta-train set to the target atlas. A Deep Neural Network (DNN) is built trained to for each task in the meta-train set. On the support set of meta-test set, we either choose the DNN that has the highest predictive accuracy on the new task (Basic meta-matching) or train a regression model using the prediction of the every DNN (Advanced Meta-matching (Stacking)). The models are then applied on the query set for validation.</p>
+<h2 id="result">Result</h2>
+<h3 id="federated-learning-with-connectomes-of-multiple-atlases-improved-predictive-performance">Federated learning with connectomes of multiple atlases improved predictive performance</h3>
+<p><img src="/img/fed_result.png" alt="fed_result">
+<strong>Figure 3. Predictive performance of the federated learning model (Fed_avg) and models trained independently on each site, with colors corresponding to the atlas used at the training site. The horizontal axis displays the atlas names associated with the testing sites. All the participants were split into 5 partitions (sites) for 100 times in the experiments. Stars above the boxplots of Fed_avg indicate a significantly higher prediction performance relative to all the other models (p &lt; 0.001).</strong></p>
+<p>As depicted in Figure 3, federated learning models exhibited superior performance compared to models trained on individual sites, encompassing a range of target atlases. These single-site models typically did not achieve significant predictive results, showing the tendency to overfit seen in models trained on single sites. Additionally, Fed_avg showed increased robustness, in stark contrast to the notably higher variance of the second-best single-site models.</p>
+<h3 id="meta-learning-on-large-scale-datasets-with-a-different-atlas-improves-predictive-performance">Meta-learning on large-scale datasets with a different atlas improves predictive performance</h3>
+<p><img src="/img/meta_result.png" alt="meta_result">
+<strong>Figure 4. Meta-matching outperforms predictions from classical machine learning methods across hetergenous domain. The left plot illustrates a scenario where the training meta-set included FCs derived from 21 independent components, while the testing set FCs were based on 55 components. Conversely, the right plot displays the reversed condition, with 55 components in the training set and 21 in the testing set.</strong></p>
+<p>Our connectome transformation approach overcomes a limitation in the original meta-matching framework, which required connectomes in large-scale datasets to match the atlas of smaller studies. As shown in Figure 4, advanced meta-matching consistently surpasses classical methods in predictive performance across various machine learning algorithms, particularly when K is less than 50. For K greater than 50, meta-matching&rsquo;s effectiveness diminishes compared to classical methods when training meta-set connectomes are transformed from low to high resolution. Nevertheless, meta-matching maintains its superiority for larger K values when the transformation is from high to low resolution. The advanced meta-matching method demonstrates the greatest stability and accuracy in predictions.</p>
+
 
         
 
@@ -267,7 +290,7 @@
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=%2f%2fqinghaoliang.github.io%2fprojects%2flearning_across_atlases%2f&amp;text=Learning%20across%20atlases&amp;via=liang_qinghao" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=%2f%2fqinghaoliang.github.io%2fprojects%2flearning_across_atlases%2f&amp;text=Learning%20brain%20phenotype%20relationship%20across%20atlases&amp;via=liang_qinghao" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -278,7 +301,7 @@
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=%2f%2fqinghaoliang.github.io%2fprojects%2flearning_across_atlases%2f&amp;title=Learning%20across%20atlases" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=%2f%2fqinghaoliang.github.io%2fprojects%2flearning_across_atlases%2f&amp;title=Learning%20brain%20phenotype%20relationship%20across%20atlases" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>

@@ -9,12 +9,12 @@
     <webMaster>qinghao.liang@yale.edu (Qinghao Liang)</webMaster>
     <lastBuildDate>Sat, 10 Feb 2024 22:10:16 -0500</lastBuildDate><atom:link href="//qinghaoliang.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Learning across atlases</title>
+      <title>Learning brain phenotype relationship across atlases</title>
       <link>//qinghaoliang.github.io/projects/learning_across_atlases/</link>
       <pubDate>Sat, 10 Feb 2024 22:10:16 -0500</pubDate>
       <author>qinghao.liang@yale.edu (Qinghao Liang)</author>
       <guid>//qinghaoliang.github.io/projects/learning_across_atlases/</guid>
-      <description></description>
+      <description>Data heterogeneity, notably due to variations in brain atlases, poses a significant challenge in federated learning (FL) and meta-learning within neuroimaging, especially in functional MRI (fMRI) studies of neurological diseases. The diversity of brain atlases leads to inconsistencies in data representation, complicating the aggregation of insights across different datasets in a federated learning framework. This heterogeneity affects the collaborative training of models, as it introduces variability in data distributions and model architectures across institutions.</description>
     </item>
     
     <item>
