@@ -1,0 +1,9 @@
+/* Change the overall font to Times New Roman */
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Adjust the title size */
+h1, .site-title {
+    font-size: 2em; /* Adjust the size as needed, e.g., 2em, 1.8em, etc. */
+}
